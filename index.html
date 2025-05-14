@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D & S Resin Art Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to right, #fff3f0, #fceae8);
+      color: #4a3b3b;
+    }
+
+    nav {
+      background: linear-gradient(to right, #ffdadb, #ffe4e1, #ffd1e6);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #f6c1c1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+      color: #d64161;
+      text-shadow: 1px 1px 5px #ffd1dc;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #6b4c4c;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #ffd1dc;
+      color: #b30059;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 10px 0;
+      top: 40px;
+      min-width: 160px;
+      z-index: 999;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #5e4444;
+      font-weight: 500;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ffe5ec;
+      color: #c45b8e;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hero-section {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      background: url('https://thumbs.dreamstime.com/b/serious-woman-artist-works-epoxy-resin-creating-picture-technique-liquid-art-professional-female-wielding-mixing-stick-344394037.jpg') no-repeat center center/cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(255,255,255,0.6));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-overlay h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 40px;
+      color: #902750;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .feature-card {
+      flex: 1 1 250px;
+      background: #fffaf9;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .feature-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .why-us {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .why-card {
+      flex: 1 1 250px;
+      background: #ffe4ec;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta a {
+      background: #d64161;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .cta a:hover {
+      background: #b8304d;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .hero-overlay h1 {
+        font-size: 28px;
+      }
+
+      .hero-section {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">D & S Resin Art Studio</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="collections.html">Gallery</a></li>
+      <li><a href="workshop.html">Workshops</a></li>
+      <li><a href="testimonal.html">Testimonials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-section">
+    <div class="hero-overlay">
+      <h1>“Art is not what you see, but what you make others see.”</h1>
+    </div>
+  </div>
+
+  <section>
+    <div style="text-align: center; margin-bottom: 40px;">
+      <h2 style="font-family: 'Great Vibes', cursive; font-size: 36px; color: #d64161;">Welcome to D & S Resin Art Studio</h2>
+      <p style="max-width: 700px; margin: auto; font-size: 18px; color: #4a3b3b;">
+        We transform imagination into stunning resin art. From elegant coasters to mesmerizing wall pieces, each creation tells a story. Dive into a world of glossy textures, vivid colors, and handcrafted charm.
+      </p>
+    </div>
+
+    <div class="features">
+      <div class="feature-card">
+        <img src="https://i.etsystatic.com/20488627/r/il/b02d06/2953819578/il_fullxfull.2953819578_41pp.jpg" alt="Coasters">
+        <h3 style="color: #902750; margin-top: 15px;">Custom Coasters</h3>
+        <p>Beautifully crafted coasters in a variety of shades and finishes.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://i.etsystatic.com/20602380/r/il/3449f1/2407416701/il_fullxfull.2407416701_8rxe.jpg" alt="Wall Art">
+        <h3 style="color: #902750; margin-top: 15px;">Wall Art</h3>
+        <p>One-of-a-kind resin wall pieces that spark emotion and elegance.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxees9AUneoJx86svueznPrlZy2PnJNbHsFA&s" alt="Trays">
+        <h3 style="color: #902750; margin-top: 15px;">Serving Trays</h3>
+        <p>Elegant trays perfect for serving or décor, customized for you.</p>
+      </div>
+    </div>
+
+    <div style="margin-top: 60px; text-align: center;">
+      <h2 style="font-family: 'Great Vibes', cursive; font-size: 32px; color: #d64161;">Why Choose Us?</h2>
+      <div class="why-us">
+        <div class="why-card">
+          <h4 style="color: #a63a57;">Handcrafted with Love</h4>
+          <p>Every piece is created with dedication and passion.</p>
+        </div>
+        <div class="why-card">
+          <h4 style="color: #a63a57;">Custom Designs</h4>
+          <p>We bring your vision to life through personalized resin art.</p>
+        </div>
+        <div class="why-card">
+          <h4 style="color: #a63a57;">Workshops</h4>
+          <p>Join our workshops and explore your inner artist.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a href="collections.html">Explore Our Collection</a>
+    </div>
+  </section>
+
+</body>
+</html>

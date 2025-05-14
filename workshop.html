@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshops - D & S Resin Art Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fff1f5, #ffe3e8);
+      color: #4a3b3b;
+    }
+
+    nav {
+      background-color: #fff0f5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    nav .logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+      color: #d64161;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #902750;
+      font-size: 17px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff5e78;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1623050856382-7c2053a15db2');
+      background-size: cover;
+      background-position: center;
+      height: 65vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1;
+    }
+
+    .hero h1 {
+      position: relative;
+      font-size: 34px;
+      z-index: 2;
+    }
+
+    .workshop-container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .workshop {
+      background-color: #fff;
+      margin-bottom: 40px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+
+    .workshop:hover {
+      transform: scale(1.02);
+    }
+
+    .workshop img {
+      width: 300px;
+      border-radius: 15px;
+      object-fit: cover;
+    }
+
+    .workshop-details {
+      flex: 1;
+    }
+
+    .workshop-details h2 {
+      color: #d64161;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .workshop-details p {
+      font-size: 17px;
+      color: #5f3d3d;
+      line-height: 1.6;
+    }
+
+    .bonus-section {
+      background-color: #fff5f8;
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 2px solid #ffc4d6;
+    }
+
+    .bonus-section h2 {
+      font-size: 34px;
+      color: #d64161;
+      margin-bottom: 25px;
+    }
+
+    .bonus-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .bonus-item {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .bonus-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .bonus-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .bonus-item h3 {
+      font-size: 20px;
+      color: #902750;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #fff0f5;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 14px;
+      color: #902750;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .workshop {
+        flex-direction: column;
+      }
+
+      .workshop img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">D & S Resin Art Studio</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="collections.html">Gallery</a></li>
+      <li><a href="workshop.html">Workshops</a></li>
+      <li><a href="testimonal.html">Testimonials</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h1>Join Our Inspiring Resin Art Workshops</h1>
+  </section>
+
+  <section class="workshop-container">
+    <div class="workshop">
+      <img src="./WhatsApp Image 2025-05-13 at 09.30.36_587f0995.jpg" alt="Beginner Workshop">
+      <div class="workshop-details">
+        <h2>Beginner Resin Art Workshop</h2>
+        <p>Learn the basics of resin art including mixing, pouring, and creating your first masterpiece. Perfect for beginners and curious creators.<br><br>
+        This workshop covers:
+        <ul>
+          <li>Types of resin and safety tips</li>
+          <li>Mixing ratios and color pigmentation</li>
+          <li>Simple coasters, keychains, and abstract panels</li>
+          <li>Tips to avoid bubbles and how to fix mistakes</li>
+        </ul>
+        You will go home with 2 custom resin crafts and the knowledge to continue creating on your own!</p>
+      </div>
+    </div>
+
+    <div class="workshop">
+      <img src="https://tulsiresin.com/cdn/shop/articles/Advanced_Resin_Art_Techniques.jpg?v=1738216077" alt="Advanced Techniques">
+      <div class="workshop-details">
+        <h2>Advanced Techniques & Projects</h2>
+        <p>Take your skills to the next level with advanced pouring techniques, embedding flowers, gold flakes, and working on custom shapes and molds.</p>
+      </div>
+    </div>
+
+    <div class="workshop">
+      <img src="https://hyderabadmail.com/wp-content/uploads/2025/02/Craft-create-and-connect-Must-attend-workshops-in-Hyderabad-this-March.jpeg" alt="Custom Workshop">
+      <div class="workshop-details">
+        <h2>Custom Resin Craft Workshop</h2>
+        <p>Host a private or group workshop with personalized themes—great for birthdays, team events, or wedding crafts!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bonus-section">
+    <h2>Special Add-Ons & Kits</h2>
+    <div class="bonus-grid">
+      <div class="bonus-item">
+        <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/art-set/b/f/c/diy-all-in-one-resin-art-kit-with-200gm-resin-4-moulds-evens-original-imah6chhakguppxf.jpeg?q=20&crop=false" alt="Resin Starter Kit">
+        <h3>Resin Starter Kit</h3>
+        <p>All-in-one kit for practicing resin art at home including tools and beginner instructions.</p>
+      </div>
+      <div class="bonus-item">
+        <img src="https://5.imimg.com/data5/WHATSAPP/Default/2024/10/460135593/HF/RJ/FF/234541472/varmala-frame-8-.jpeg" alt="Wedding Keepsake">
+        <h3>Wedding Keepsake Kits</h3>
+        <p>Create your own wedding bouquet resin blocks and memory frames in our guided sessions.</p>
+      </div>
+      <div class="bonus-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuIT7jYqPHDz1BtYchWCkasI9R6SiOKNQ1fg&s" alt="Group Events">
+        <h3>Corporate & Group Events</h3>
+        <p>Team-building and DIY resin activities tailored for offices, parties, and festivals.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 D & S Resin Art Studio. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - D & S Resin Art Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background-color: #fff0f5;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #d64161;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #902750;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff5e78;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: url('https://images.unsplash.com/photo-1596451944700-9ef4d4cf8f9c') no-repeat center center/cover;
+      color:#d64161;
+    }
+
+    header h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    header p {
+      font-size: 18px;
+      color:#ff5e78;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .testimonial {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .testimonial:hover {
+      transform: scale(1.03);
+    }
+
+    .testimonial img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #ffcad4;
+    }
+
+    .testimonial h3 {
+      font-size: 22px;
+      color: #902750;
+      margin-bottom: 10px;
+    }
+
+    .testimonial p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #fff0f5;
+      padding: 20px;
+      color: #902750;
+      font-size: 14px;
+      margin-top: 50px;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">D & S Resin Art Studio</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="collections.html">Gallery</a></li>
+      <li><a href="workshop.html">Workshops</a></li>
+      <li><a href="testimonal.html">Testimonials</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>What Our Clients Say</h1>
+    <p>We love hearing from our happy artists and workshop guests!</p>
+  </header>
+
+  <section class="testimonials">
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client 1">
+      <h3>Meera Kapoor</h3>
+      <p>The workshop was magical! I never thought I could create something so beautiful with resin. The team was supportive and kind throughout.</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Client 2">
+      <h3>Arjun Mehta</h3>
+      <p>I bought a customized name plate from D & S Studio—it’s now the centerpiece of my entrance! Truly high quality and unique design.</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Client 3">
+      <h3>Sneha Reddy</h3>
+      <p>The resin wedding keepsake made from my bouquet brought me to tears. Thank you for preserving such precious memories.</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="Client 4">
+      <h3>Ravi Sharma</h3>
+      <p>As a beginner, I found the instructions easy to follow, and now I’ve started making my own resin coasters. Loved every minute!</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Client 3">
+      <h3>Sneha Reddy</h3>
+      <p>The resin wedding keepsake made from my bouquet brought me to tears. Thank you for preserving such precious memories.</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="Client 4">
+      <h3>Ravi Sharma</h3>
+      <p>As a beginner, I found the instructions easy to follow, and now I’ve started making my own resin coasters. Loved every minute!</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 D & S Resin Art Studio. Crafted with love.
+  </footer>
+</body>
+</html>
