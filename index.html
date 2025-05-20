@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>D & S Resin Art Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -29,6 +31,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -36,6 +39,40 @@
       font-size: 32px;
       color: #d64161;
       text-shadow: 1px 1px 5px #ffd1dc;
+    }
+
+    #nav-toggle {
+      display: none;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      width: 28px;
+      height: 22px;
+      justify-content: center;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      background: #6b4c4c;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    #nav-toggle:checked + .hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
     }
 
     .nav-links {
@@ -63,35 +100,34 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      padding: 10px 0;
-      top: 40px;
-      min-width: 160px;
-      z-index: 999;
-    }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
 
-    .dropdown-content a {
-      display: block;
-      padding: 10px 20px;
-      color: #5e4444;
-      font-weight: 500;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(to right, #ffdadb, #ffe4e1, #ffd1e6);
+        border-radius: 0 0 16px 16px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease-in-out;
+      }
 
-    .dropdown-content a:hover {
-      background-color: #ffe5ec;
-      color: #c45b8e;
-    }
+      #nav-toggle:checked ~ .nav-links {
+        max-height: 500px;
+        padding: 20px 0;
+      }
 
-    .dropdown:hover .dropdown-content {
-      display: block;
+      .nav-links li {
+        text-align: center;
+      }
+
+      .nav-links a {
+        padding: 15px 0;
+        display: block;
+      }
     }
 
     .hero-section {
@@ -122,6 +158,16 @@
       text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
     }
 
+    @media (max-width: 768px) {
+      .hero-overlay h1 {
+        font-size: 28px;
+      }
+
+      .hero-section {
+        height: 350px;
+      }
+    }
+
     section {
       padding: 60px 20px;
       max-width: 1200px;
@@ -133,6 +179,7 @@
       flex-wrap: wrap;
       gap: 30px;
       justify-content: center;
+      animation: fadeInUp 1s ease-in-out;
     }
 
     .feature-card {
@@ -142,6 +189,13 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       padding: 20px;
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      background: #fff0f6;
     }
 
     .feature-card img {
@@ -149,6 +203,29 @@
       height: 180px;
       object-fit: cover;
       border-radius: 10px;
+    }
+
+    .feature-card h3 {
+      color: #902750;
+      margin-top: 15px;
+      font-size: 20px;
+    }
+
+    .feature-card p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #4a3b3b;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .why-us {
@@ -186,35 +263,20 @@
     .cta a:hover {
       background: #b8304d;
     }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        gap: 15px;
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      .hero-overlay h1 {
-        font-size: 28px;
-      }
-
-      .hero-section {
-        height: 350px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <nav>
     <div class="logo">D & S Resin Art Studio</div>
+
+    <input type="checkbox" id="nav-toggle" />
+    <label for="nav-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
     <ul class="nav-links">
       <li><a href="#">Home</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -243,21 +305,44 @@
     <div class="features">
       <div class="feature-card">
         <img src="https://i.etsystatic.com/20488627/r/il/b02d06/2953819578/il_fullxfull.2953819578_41pp.jpg" alt="Coasters">
-        <h3 style="color: #902750; margin-top: 15px;">Custom Coasters</h3>
+        <h3>Custom Coasters</h3>
         <p>Beautifully crafted coasters in a variety of shades and finishes.</p>
       </div>
       <div class="feature-card">
         <img src="https://i.etsystatic.com/20602380/r/il/3449f1/2407416701/il_fullxfull.2407416701_8rxe.jpg" alt="Wall Art">
-        <h3 style="color: #902750; margin-top: 15px;">Wall Art</h3>
+        <h3>Wall Art</h3>
         <p>One-of-a-kind resin wall pieces that spark emotion and elegance.</p>
       </div>
       <div class="feature-card">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxees9AUneoJx86svueznPrlZy2PnJNbHsFA&s" alt="Trays">
-        <h3 style="color: #902750; margin-top: 15px;">Serving Trays</h3>
+        <h3>Serving Trays</h3>
         <p>Elegant trays perfect for serving or décor, customized for you.</p>
       </div>
-    </div>
-
+      <div class="feature-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2UzDRNg6wPFZFZbf-0dn5kaM8MhL0BBlq32nub45ZzchvHtFRjVatqQqEGzAZgrTwg84&usqp=CAU" alt="Jewelry">
+        <h3>Resin Jewelry</h3>
+        <p>Delicate pendants and earrings infused with elegance and shimmer.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://i.etsystatic.com/24800330/r/il/450d8c/2563368623/il_fullxfull.2563368623_2n6b.jpg" alt="Bookmarks">
+        <h3>Bookmarks</h3>
+        <p>Chic and colorful bookmarks – a perfect blend of art and utility.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://i.pinimg.com/736x/00/c5/9b/00c59b939ec4bea6d035f73d289864fc.jpg" alt="Table Décor">
+        <h3>Table Décor</h3>
+        <p>Give your space a spark of beauty with unique table art pieces.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://i.etsystatic.com/24316820/r/il/4774e6/2747226327/il_1588xN.2747226327_1dgu.jpg" alt="Keychains">
+        <h3>Keychains</h3>
+        <p>Fun and expressive resin keychains to carry your personality.</p>
+      </div>
+      <div class="feature-card">
+        <img src="https://i.etsystatic.com/42805264/r/il/3688d3/4868079423/il_1080xN.4868079423_au42.jpg" alt="Nameplates">
+        <h3>Nameplates</h3>
+        <p>Custom resin nameplates that add identity and art to your space.</p>
+      </div>
     <div style="margin-top: 60px; text-align: center;">
       <h2 style="font-family: 'Great Vibes', cursive; font-size: 32px; color: #d64161;">Why Choose Us?</h2>
       <div class="why-us">
@@ -280,6 +365,45 @@
       <a href="collections.html">Explore Our Collection</a>
     </div>
   </section>
+    <footer style="background: linear-gradient(to right, #ffe4e1, #ffd1e6); padding: 40px 20px; color: #6b4c4c; font-family: 'Quicksand', sans-serif; border-top: 2px solid #f6c1c1;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+      <div style="flex: 1 1 250px;">
+        <h3 style="font-family: 'Great Vibes', cursive; font-size: 28px; color: #d64161;">D & S Resin Art Studio</h3>
+        <p style="margin-top: 10px; font-size: 16px;">
+          Creating handmade resin art with passion and elegance. Explore our world of glossy textures and vibrant colors.
+        </p>
+      </div>
+      <div style="flex: 1 1 200px;">
+        <h4 style="margin-bottom: 15px; color: #a63a57;">Quick Links</h4>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+          <li><a href="about.html" style="text-decoration: none; color: #6b4c4c;">About Us</a></li>
+          <li><a href="collections.html" style="text-decoration: none; color: #6b4c4c;">Gallery</a></li>
+          <li><a href="workshop.html" style="text-decoration: none; color: #6b4c4c;">Workshops</a></li>
+          <li><a href="contact.html" style="text-decoration: none; color: #6b4c4c;">Contact</a></li>
+        </ul>
+      </div>
+<div style="flex: 1 1 200px;">
+  <h4 style="margin-bottom: 15px; color: #a63a57;">Follow Us</h4>
+  <div style="display: flex; gap: 15px; font-size: 22px;">
+    <a href="https://www.instagram.com/ds_resin_art_studio?igsh=MTU2M2Z1c3d6ZDh6Mg==" target="_blank" style="color: #d64161;" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" style="color: #d64161;" title="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.pinterest.com/" target="_blank" style="color: #d64161;" title="Pinterest">
+      <i class="fab fa-pinterest"></i>
+    </a>
+    <a href="mailto:contact@resinartstudio.com" style="color: #d64161;" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</div>
+  </div>
 
+    <div style="text-align: center; margin-top: 30px; font-size: 14px; border-top: 1px solid #f0b6c1; padding-top: 20px; color: #855c5c;">
+      &copy; 2025 D & S Resin Art Studio. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>

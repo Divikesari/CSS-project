@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Register - D & S Resin Art Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -13,20 +14,25 @@
       background: linear-gradient(to right, #fff0f5, #ffe5ec);
     }
 
-    nav {
-      background-color: #ffe4ec;
-      padding: 20px 40px;
+   nav {
+      background: linear-gradient(to right, #ffdadb, #ffe4e1, #ffd1e6);
+      padding: 15px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-bottom: 2px solid #f6c1c1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
     }
-
-   nav .logo {
+    nav .logo {
       font-family: 'Great Vibes', cursive;
       font-size: 36px;
       color: #d64161;
     }
+
     nav ul {
       list-style: none;
       display: flex;
@@ -44,7 +50,30 @@
     nav ul li a:hover {
       color: #ff5e78;
     }
+    .menu-icon {
+      display: none;
+      font-size: 30px;
+      color: #902750;
+      cursor: pointer;
+      user-select: none;
+    }
 
+    #menu-toggle {
+      display: none;
+    }
+    #menu-toggle:checked + .menu-icon + ul {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #ffe4ec;
+      padding: 20px;
+      gap: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+    }
     .register-container {
       background: white;
       padding: 40px;
@@ -53,6 +82,7 @@
       width: 100%;
       max-width: 420px;
       margin: 50px auto;
+      box-sizing: border-box;
     }
 
     .register-container h2 {
@@ -77,6 +107,7 @@
       border: 2px solid #ffc1d3;
       border-radius: 8px;
       font-size: 16px;
+      box-sizing: border-box;
     }
 
     button {
@@ -110,17 +141,99 @@
     .login-link a:hover {
       color: #902750;
     }
+    @media (max-width: 991px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 20px;
+      }
+
+      .menu-icon {
+        display: block;
+        position: absolute;
+        top: 22px;
+        right: 20px;
+      }
+
+      nav ul {
+        display: none;
+        width: 100%;
+      }
+
+      #menu-toggle:checked + .menu-icon + ul {
+        display: flex;
+      }
+      .register-container {
+        width: 90%;
+        max-width: 420px;
+        margin: 40px auto;
+        padding: 30px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 15px 15px;
+      }
+
+      nav .logo {
+        font-size: 28px;
+      }
+
+      nav ul li a {
+        font-size: 14px;
+      }
+
+      .register-container {
+        padding: 20px;
+        margin: 30px 15px;
+      }
+
+      .register-container h2 {
+        font-size: 22px;
+      }
+
+      label {
+        font-size: 14px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .login-link {
+        font-size: 14px;
+      }
+    }
+    footer {
+      background-color: #fff0f5;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+      font-size: 14px;
+      color: #902750;
+    }
   </style>
 </head>
 <body>
   <nav>
     <div class="logo">D & S Resin Art Studio</div>
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="collections.html">Explore</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="workshop.html">Workshops</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="testimonal.html">Testimonials</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -129,19 +242,19 @@
     <h2>Create an Account</h2>
     <form action="#" method="POST">
       <label for="fullname">Full Name</label>
-      <input type="text" id="fullname" name="fullname" required>
+      <input type="text" id="fullname" name="fullname" required />
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" name="email" required />
 
       <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
+      <input type="text" id="username" name="username" required />
 
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" name="password" required />
 
       <label for="confirm-password">Confirm Password</label>
-      <input type="password" id="confirm-password" name="confirm-password" required>
+      <input type="password" id="confirm-password" name="confirm-password" required />
 
       <button type="submit">Register</button>
     </form>
@@ -149,5 +262,45 @@
       Already have an account? <a href="login.html">Login here</a>
     </div>
   </div>
+     <footer style="background: linear-gradient(to right, #ffe4e1, #ffd1e6); padding: 40px 20px; color: #6b4c4c; font-family: 'Quicksand', sans-serif; border-top: 2px solid #f6c1c1;">
+    <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 30px;">
+      <div style="flex: 1 1 250px;">
+        <h3 style="font-family: 'Great Vibes', cursive; font-size: 28px; color: #d64161;">D & S Resin Art Studio</h3>
+        <p style="margin-top: 10px; font-size: 16px;">
+          Creating handmade resin art with passion and elegance. Explore our world of glossy textures and vibrant colors.
+        </p>
+      </div>
+      <div style="flex: 1 1 200px;">
+        <h4 style="margin-bottom: 15px; color: #a63a57;">Quick Links</h4>
+        <ul style="list-style: none; padding: 0; line-height: 2;">
+          <li><a href="about.html" style="text-decoration: none; color: #6b4c4c;">About Us</a></li>
+          <li><a href="collections.html" style="text-decoration: none; color: #6b4c4c;">Gallery</a></li>
+          <li><a href="workshop.html" style="text-decoration: none; color: #6b4c4c;">Workshops</a></li>
+          <li><a href="contact.html" style="text-decoration: none; color: #6b4c4c;">Contact</a></li>
+        </ul>
+      </div>
+<div style="flex: 1 1 200px;">
+  <h4 style="margin-bottom: 15px; color: #a63a57;">Follow Us</h4>
+  <div style="display: flex; gap: 15px; font-size: 22px;">
+    <a href="https://www.instagram.com/ds_resin_art_studio?igsh=MTU2M2Z1c3d6ZDh6Mg==" target="_blank" style="color: #d64161;" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/" target="_blank" style="color: #d64161;" title="Facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.pinterest.com/" target="_blank" style="color: #d64161;" title="Pinterest">
+      <i class="fab fa-pinterest"></i>
+    </a>
+    <a href="mailto:contact@resinartstudio.com" style="color: #d64161;" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+</div>
+  </div>
+
+    <div style="text-align: center; margin-top: 30px; font-size: 14px; border-top: 1px solid #f0b6c1; padding-top: 20px; color: #855c5c;">
+      &copy; 2025 D & S Resin Art Studio. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
