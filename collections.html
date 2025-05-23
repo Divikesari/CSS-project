@@ -6,7 +6,7 @@
   <title>Explore Our Collection - D & S Resin Art Studio</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  <style>
+   <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -69,7 +69,6 @@
       transition: 0.4s;
     }
 
-    /* Header */
     h1 {
       text-align: center;
       font-family: 'Great Vibes', cursive;
@@ -129,6 +128,7 @@
       font-size: 15px;
       color: #6e4c4c;
     }
+
     @media (max-width: 768px) {
       .hamburger {
         display: flex;
@@ -149,7 +149,6 @@
       .nav-links.active {
         display: flex;
       }
-
       nav {
         flex-direction: column;
         align-items: flex-start;
@@ -168,16 +167,13 @@
         height: 180px;
       }
     }
-
     @media (max-width: 480px) {
       .logo {
         font-size: 24px;
       }
-
       .card-title {
         font-size: 16px;
       }
-
       .card-description {
         font-size: 13px;
       }
@@ -186,8 +182,8 @@
 </head>
 <body>
   <nav>
-    <div class="logo">D & S Resin Art Studio</div>
-    <div class="hamburger" onclick="toggleMenu()">
+     <div class="logo">D & S Resin Art Studio</div>
+    <div class="hamburger" id="hamburger">
       <div></div>
       <div></div>
       <div></div>
@@ -299,7 +295,7 @@
       </div>
 <div style="flex: 1 1 200px;">
   <h4 style="margin-bottom: 15px; color: #a63a57;">Follow Us</h4>
-  <div style="display: flex; gap: 15px; font-size: 22px;">
+  <div style="display: flex; gap: 15px; font-size: 30px;">
     <a href="https://www.instagram.com/ds_resin_art_studio?igsh=MTU2M2Z1c3d6ZDh6Mg==" target="_blank" style="color: #d64161;" title="Instagram">
       <i class="fab fa-instagram"></i>
     </a>
